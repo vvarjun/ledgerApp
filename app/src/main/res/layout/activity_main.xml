@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/editTextFirstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name" />
+        <EditText
+            android:id="@+id/editTextLastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextFirstname"
+            android:layout_marginTop="16dp"
+            android:hint="Last Name" />
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextLastname"
+            android:layout_marginTop="16dp"
+            android:hint="Username" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextUsername"
+            android:layout_marginTop="16dp"
+            android:inputType="textEmailAddress"
+            android:hint="Email" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextEmail"
+            android:layout_marginTop="16dp"
+            android:inputType="textPassword"
+            android:hint="Password" />
+        <EditText
+            android:id="@+id/editTextConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextPassword"
+            android:layout_marginTop="16dp"
+            android:inputType="textPassword"
+            android:hint="Confirm Password" />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextConfirmPassword"
+            android:layout_marginTop="24dp"
+            android:text="Register" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
