@@ -1,10 +1,10 @@
 package com.example.ledgerit.data
-
-import User
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
-@Database(entities = [User::class], version = 1)
-abstract class AppDatabase : RoomDatabase() {
+@Database(entities = [Customer::class], version = 1)
+abstract class AppDatabase() : RoomDatabase() {
+
     abstract fun userDao(): UserDao
+
 }

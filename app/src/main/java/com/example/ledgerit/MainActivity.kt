@@ -3,16 +3,28 @@ package com.example.ledgerit
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.room.Room
+import com.example.ledgerit.data.AppDatabase
+import com.example.ledgerit.data.Customer
+import com.example.ledgerit.data.UserDao
 import com.example.ledgerit.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    companion object {
+        lateinit var database: AppDatabase
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        database = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java,
+            "test_database"
+        ).build()
 
         // Accessing views using View Binding
         val usernameEditText = binding.editTextUsername
@@ -35,14 +47,15 @@ class MainActivity : AppCompatActivity() {
                 showToast("Passwords does not match")
                 return@setOnClickListener
 
-            if(username.length != 0
-                && email.length !=0
-                && firstName.length !=0
-                && lastName.length !=0)
+            if (username.isNotEmpty() && email.isNotEmpty() && firstName.isNotEmpty() && lastName.isNotEmpty()) {
+                val newUser = Customer(1, firstName, lastName, username, password, email)
+                MainActivity.database.userDao().insertAll(newUser)
+                showToast("Registration successful!")
+                // println(newUser) // Uncomment this if you want to print the new user details
+            } else {
+                showToast("Please fill out all fields")
+            }
 
-                    showToast("Registration successful!")
-                    return@setOnClickListener
-                    //println(newUser)
         }
 
     }
