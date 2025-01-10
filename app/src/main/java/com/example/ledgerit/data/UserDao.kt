@@ -1,24 +1,42 @@
 package com.example.ledgerit.data
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import android.os.Parcel
+import android.os.Parcelable
+import androidx.room.*
+
+@Database(entities = [Customer::class, Payment::class,  Admin::class], version = 2)
+abstract class AppDatabase() : RoomDatabase() {
+
+
+    abstract fun customerDao(): CustomerDao
+    abstract fun paymentDao(): PaymentDao
+    abstract fun adminDao(): AdminDao
+
+
+
+
+}
+@Dao
+interface AdminDao {
+    @Insert
+    suspend fun insertAdmin(admin: Admin)
+
+    @Query("SELECT * FROM Admin WHERE username = :username AND password = :password")
+    suspend fun getAdmin(username: String, password: String): Admin?
+}
+@Dao
+interface CustomerDao {
+    @Insert
+    suspend fun insertCustomer(customer: Customer)
+
+    @Query("SELECT * FROM Customer")
+    suspend fun getAllCustomers(): List<Customer>
+}
 
 @Dao
-interface UserDao {
-    @Query("SELECT * FROM Customer")
-    fun getAll(): List<Customer>
-
-    @Query("SELECT * FROM Customer WHERE uid IN (:userIds)")
-    fun loadAllByIds(userIds: IntArray): List<Customer>
-
-    @Query("SELECT * FROM Customer WHERE first_name LIKE :first AND " +
-            "last_name LIKE :last LIMIT 1")
-    fun findByName(first: String, last: String): Customer
-
+interface PaymentDao {
     @Insert
-    fun insertAll(vararg customers: Customer)
+    suspend fun insertPayment(payment: Payment)
 
-    @Delete
-    fun delete(customer: Customer)
+    @Query("SELECT * FROM Payment WHERE customerId = :customerId")
+    suspend fun getPaymentsForCustomer(customerId: Int): List<Payment>
 }

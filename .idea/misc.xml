@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_admin.xml" value="0.215625" />
+        <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_customer.xml" value="0.215625" />
         <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_3.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_first.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_second.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_third.xml" value="0.17777777777777778" />
         <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/login_activity.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/register_activity.xml" value="0.16259057971014493" />
         <entry key="..\:/Users/arjun/AndroidStudioProjects/MyApplication2/app/src/main/res/menu/nav_menu.xml" value="0.21666666666666667" />
       </map>
     </option>
