@@ -13,12 +13,18 @@
 
         <activity android:name="com.example.ledgerit.MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.ledgerit.CustomerActivity" />
+        <activity android:name="com.example.ledgerit.AdminActivity" />
+        <activity android:name="com.example.ledgerit.RegistrationActivity" />
+
+
     </application>
 
 </manifest>
